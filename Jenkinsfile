@@ -8,7 +8,7 @@ pipeline{
     }
 
     stages{
-        stage(BUILD THE DOCKERFILE AND PUSH TO THE DOCKERHUB){
+        stage('BUILD THE DOCKERFILE AND PUSH TO THE DOCKERHUB'){
             agent any
 
             steps{
