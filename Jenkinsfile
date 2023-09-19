@@ -15,7 +15,7 @@ pipeline{
 
             steps{
                 script{
-                    sshagent([build-server-key]){
+                    sshagent(['build-server-key']){
 
                         //withCredentials is used to bind your Docker Hub Credentials with the variables so that your credentials is encrypted. 
                         withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
