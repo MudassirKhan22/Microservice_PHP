@@ -4,7 +4,8 @@ pipeline{
     environment{
         BUILD_SERVER_IP= 'ec2-user@13.232.190.231'
         DEPLOY_SERVER_IP= 'ec2-user@3.109.58.101'
-        IMAGE_NAME= "mudassir12/micro-service-app:php${BUILD_NUMBER}"
+        IMAGE_NAME = "mudassir12/micro-service-app:php${BUILD_NUMBER}"
+
         
     }
 
