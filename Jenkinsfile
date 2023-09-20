@@ -42,7 +42,7 @@ pipeline{
             steps{
 
                 script{
-                    sshagent(['build-server-key'])
+                    sshagent(['build-server-key']){
 
                     withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
 
@@ -51,20 +51,13 @@ pipeline{
                     sh "ssh ${DEPLOY_SERVER_IP} sudo docker login -u ${USERNAME} -p ${PASSWORD}"
                     sh "ssh ${DEPLOY_SERVER_IP} bash /home/ec2-user/Docker-files/docker-compose-script.sh ${IMAGE_NAME}"
 
-                    
+                    }
 
-
-                   
                     }
 
                 }
             }
         }
-
-
-
-
-
 
     }
 }
