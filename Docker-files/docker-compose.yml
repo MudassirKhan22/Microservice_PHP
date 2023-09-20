@@ -1,0 +1,26 @@
+version: "3"
+services:
+    web:
+      image : "${DOCKER_IMAGE}"
+      # image: mudassir12/php:v1
+      ports:
+      - "81:80"
+
+    # deploy parameter is used for scaling. When load increases then it will launch a php container
+      deploy:
+        replicas: 2
+  
+    # depends_on parameter defines which service is dependent on which service.
+      depends_on:
+      - mysql 
+    mysql:
+      image: mudassir12/db:v1
+      volumes:
+      - db_data:/var/lib/mysql
+      environment:
+        MYSQL_DATABASE: mydatabase
+        MYSQL_ROOT_PASSWORD: password
+
+volumes:
+  db_data: {}
+
