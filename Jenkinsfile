@@ -2,8 +2,8 @@ pipeline{
     agent none
 
     environment{
-        BUILD_SERVER_IP= 'ec2-user@13.232.190.231'
-        DEPLOY_SERVER_IP= 'ec2-user@3.109.58.101'
+        BUILD_SERVER_IP= 'ec2-user@13.232.203.27'
+        DEPLOY_SERVER_IP= 'ec2-user@3.110.56.44'
         IMAGE_NAME = "mudassir12/micro-service-app:php${BUILD_NUMBER}"
 
         
