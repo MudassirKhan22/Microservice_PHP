@@ -8,7 +8,7 @@ services:
 
     # deploy parameter is used for scaling. When load increases then it will launch a php container
       deploy:
-        replicas: 2
+        replicas: 1
   
     # depends_on parameter defines which service is dependent on which service.
       depends_on:
